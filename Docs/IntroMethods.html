@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referencing, Introduction, Theory and Methods &#8212; PHYS11006 - Computing Skills Workshop</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntroMethods';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LaTeX, Results, Discussion and Conclusion" href="ResultsDiscussionConclusion.html" />
+    <link rel="prev" title="The Scientific Report" href="Scientific_Report.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHY11006 Academic Writing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 9</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Scientific_Communication.html">Scientific Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scientific_Report.html">The Scientific Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 10</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Referencing, Introduction, Theory and Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 11</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ResultsDiscussionConclusion.html">LaTeX, Results, Discussion and Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ComputationalWriting.html">Computational Tools for Writing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FIntroMethods.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/IntroMethods.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Referencing, Introduction, Theory and Methods</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sourcing-and-referencing-information">Sourcing and Referencing Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-styles">Referencing Styles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reference-items">How to Reference Items</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-session-you-are-going-to-begin-drafting-the-introduction-theory-and-methods-section-of-a-report">In this session you are going to begin drafting the introduction, theory and methods section of a report.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-relavent-references">1. Find Relavent References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-introduction">2. Write the Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-theory-section">3. Write the Theory Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-methodology">4. Write the Methodology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-managers">5. Reference Managers</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="referencing-introduction-theory-and-methods">
+<h1>Referencing, Introduction, Theory and Methods<a class="headerlink" href="#referencing-introduction-theory-and-methods" title="Permalink to this heading">#</a></h1>
+<hr class="docutils" />
+<div class="section" id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h2>
+<p>By the end of this session you should:</p>
+<ul class="simple">
+<li><p>Understand how to source information for a lab report.</p></li>
+<li><p>Be aware of reference managers and why we use them.</p></li>
+<li><p>Understand how to reference appropriately using the Harvard and APA styles.</p></li>
+<li><p>Practise writing the introduction, theory and methods section of a lab report.</p></li>
+</ul>
+<p>In this session, we are going to work towards having an Introduction and Methods section written for one of your lab experiments. We are going to spend a little bit of time on how to structure your paragraphs to make it easy for your reader (topic sentences), and some more time on referencing styles.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="sourcing-and-referencing-information">
+<h2>Sourcing and Referencing Information<a class="headerlink" href="#sourcing-and-referencing-information" title="Permalink to this heading">#</a></h2>
+<p>When writing a report, most of your references are likely to be in your introduction section, where you talk about why what you are doing is important and what others have done. Still, keep in mind that if you are going through some theoretical derivations later on they should be referenced, or you might be using the same method as someone else, so references should pop up throughout your work.</p>
+<p>How do you actually find information that is relevent to the topic that you are writing about? When you type a topic into StarPlus, you’ll get thousands of hits and whislt we can filter these results by using the StarPlus filter toos, you could still get hundereds of hits hits. We don’t expect you to fully read all these papers, instead you can reduce the numbers further by checking if they are actually relevant using these steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Read the title</strong> - is it relevant to you? If it’s not, move on. If it sounds relevant…</p></li>
+<li><p>…<strong>Read the abstract</strong> - does it talk about what you need?</p></li>
+<li><p><strong>Read the conclusion</strong> - it should summarise the paper so it’s good to read it.</p></li>
+</ol>
+<p>This should reduce it to far fewer relevant papers.</p>
+<ol class="arabic simple" start="4">
+<li><p>If you’re using the same method as them and it’s what you are interested in, <strong>read the method</strong>.</p></li>
+<li><p>If they are using the same analysis method, read about it.</p></li>
+<li><p>Basically see which sections are relevant!</p></li>
+<li><p>Finally, <strong>check their references</strong>, it could be something useful there.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Review Articles</strong></p>
+<p>Journal articles have the advantage of being peer reviewed (note that this doesn’t mean the experiment is being repeated by the peer reviewers, just that they’ve read the paper). However, they often include some scientific jargon and are difficult to fully understand unless you are an expert in that particular topic. As such, learning about a new field can be very daunting owing to the fact it is often hard to know where to start your research. This is particularly true if you do not even know what you need to know!</p>
+<p>A review article is often a fantastic place to start as it provides an overview of the key advances in a given field by providing an overview of the relevent works that have been performed since the last review article. They also often identify gaps in the literature and make suggestions on where the field could move forwards. An example of a review article can be found <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0146641015000915">here</a>.</p>
+<p>Take a look at the review article above and consider how it differs to other academic literature you have encountered. <em>Note: You are not expected to understand the physics in this article yet!</em>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="referencing-styles">
+<h3>Referencing Styles<a class="headerlink" href="#referencing-styles" title="Permalink to this heading">#</a></h3>
+<p>In Physics and Astronomy, there are two main referencing styles being used: <strong>AIP</strong> and <strong>Harvard</strong>. The library has pretty good guides for them: <a class="reference external" href="https://sheffield.libguides.com/guidephysastr/referencing">Referencing - Physics and Astronomy - Library Guides at University of Sheffield</a>. The one we recommend you use now is the AIP one. This is the one with [numbers] in the text, and a numbered list at the end of the report.</p>
+<p>For reference, below you can find some of the information taken from this library guide, specifically some of the information around how to use intext AIP citations and how to correctly structure your references in this style.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Why reference correctly?</p>
+<p>In academic writing it is important to read around the subject to gather ideas, theories and facts about your assignment topic. It is not about making statements which are not backed up by evidence. Referencing correctly is important for a number of reasons:</p>
+<ul class="simple">
+<li><p>It is evidence of the reading you have done when preparing for your assignment.</p></li>
+<li><p>It provides support for your own arguments.</p></li>
+<li><p>It allows you to show your understanding of the issues involved in your subject and your ability to critically apply that understanding.</p></li>
+<li><p>You avoid plagiarism by acknowledging the ideas, opinions and quotations that you have used in your own work.</p></li>
+<li><p>It provides sufficient information for someone to follow up your reference and chase the item.</p></li>
+<li><p>Referencing is also known as citing, the two words can be used interchangeably.</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Creating an in-text Citation</p>
+<p>Each time you introduce an idea, thought, or theory in your work that belongs to another person, a reference number should be given, enclosed in square brackets, e.g. [1], [2]. This number should refer to an entry in a reference list at the end of your piece of work, giving full details of the sources you have cited. See <a class="reference external" href="https://librarydevelopment.group.shef.ac.uk/referencing/aip.html#citations">Creating a Reference List for more information</a>.</p>
+<p>The general rules for creating an in-text citation are:</p>
+<ul class="simple">
+<li><p>Numbers are added sequentially by the order they appear in the text.</p></li>
+<li><p>The number should be included inside the punctuation of the sentence.</p></li>
+<li><p>If you are using the same reference more than once, it will keep the same number all the way through your piece of work.</p></li>
+</ul>
+<p>Examples:</p>
+<p>The photoelectric effect can be used to determine the value of Planck’s constant [1].</p>
+<p>“All elements heavier than lithium are created by fusion or neutron capture in stellar interiors” [2].</p>
+<hr class="docutils" />
+<p>Referencing</p>
+<p>[1] R.A. Millikan, Phys. Rev. 4, 73 (1914).</p>
+<p>[2] E.M. Burbidge et al., Rev. Mod. Phys. 29, 547 (1957).</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Quoting and Paraphrasing</p>
+<p>A quotation is where you use the exact phrase or words of the original author. Indicate quotations by typing quotation marks around the exact words, phrase or sentence followed by the numerical marker in square brackets. A full reference should be included in your reference list at the end of your piece of work.</p>
+<p>It is unusual for science students to quote significant amounts of material directly. You should read the literature - making notes in your own words and recording the source of the information - and then paraphrase (write in your own words) a synthesis or summary of the material based on your understanding of the subject, always acknowledging the source in your references.</p>
+<p>Try not to over rely on quotations, as this may show a lack of understanding of the information. You should summarise the key points you wish to make in your assignment in your own words. If in doubt, check with your tutor or in your course handbook for further guidance.</p>
+<p><strong>Quoting a definition</strong></p>
+<p>According to the SI standard, “The second is the duration of 9 192 631 770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the cesium 133 atom.” [3].</p>
+<p><strong>Quoting an opinion</strong></p>
+<p>(With which you do not necessarily agree)</p>
+<p>Eddington stated, “If the contraction theory were proposed to-day as a novel hypothesis, I do not think it would stand the slightest change of acceptance” [4].</p>
+<p><strong>Quoting a first-hand account</strong></p>
+<p>Morgan recalled the mapping of spiral arms by means of H II regions as “a jewel all the way. It was absolutely perfect.” [5].</p>
+<hr class="docutils" />
+<p>References</p>
+<p>[3] B.N Taylor and A. Thompson, (Eds.) The International System of Units (SI), 2008 ed. (National Institute of Standards and Technology, Gaithersburg, MD, 2088).</p>
+<p>[4] A.S Eddington, Obs. 43, 341 (1920).</p>
+<p>[5] K. Croswell, The Alchemy of the Heavens, (Oxford University Press, Oxford, 1996).</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Creating a Reference List</p>
+<p>The reference list comes after the main body of your work, starting on a new page. It must list all the sources you have cited in your assignment.</p>
+<p><strong>General rules for creating a reference list:</strong></p>
+<ul class="simple">
+<li><p>The references in the reference list provide the full citation for those works referenced by numerical markers within the text.</p></li>
+<li><p>References are listed by the number you have assigned the reference in the text.</p></li>
+<li><p>List up to three authors in the reference list. For items with four or more authors, list the name of the first author followed by ‘et al.’.</p></li>
+<li><p>Each reference should end with a full stop unless it ends with a DOI/URL (a full stop may prevent the link from working).</p></li>
+<li><p>DOIs should be written as a permanent URL with the https://doi.org prefix.</p></li>
+<li><p>Certain materials, such as dictionaries and encyclopedias, may not have one person or persons as the main originator. These items can be referenced using the title first.</p></li>
+<li><p>Use abbreviations for titles of journals. You can use the Web of Science Journal Titles Abbreviations.</p></li>
+<li><p>When referencing a journal, the part number may be omitted if the volume has a continuous paging sequence.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Example reference list:</strong></p>
+<p>[1] R.A. Millikan, Phys. Rev. 4, 73 (1914).</p>
+<p>[2] E.M. Burbidge et al., Rev. Mod. Phys. 29, 547 (1957).</p>
+<p>[3] B.N Taylor and A. Thompson, (Eds.) The International System of Units (SI), 2008 ed. (National Institute of Standards and Technology, Gaithersburg, MD, 2088).</p>
+<p>[4] A.S Eddington, Obs. 43, 341 (1920).</p>
+<p>[5] K. Croswell, The Alchemy of the Heavens, (Oxford University Press, Oxford, 1996).</p>
+<p>[6] M.S. Longair, High Energy Astrophysics, 2nd ed., reprinted with corrections. (Taylor &amp; Francis, London, 1997).</p>
+<p>[7] British Ecological Society, Ecological Concepts: The Contribution of Ecology to an Understanding of the Natural World, (Blackwell Scientific, Oxford, 1989).</p>
+<p>[8] B.W. Carroll and D.A. Ostlie, An Introduction to Modern Astrophysics, 2nd ed. (Pearson/Addison Wesley, San Francisco, 2007).</p>
+<p>[9] T.K. Gaisser, R. Engel, and E. Resconi, Cosmic Rays and Particle Physics, 2nd ed. (Cambridge University Press, Cambridge, 2016).</p>
+<p>[10] F.P. Incropera et al., Principles of Heat and Mass Transfer, 7th ed. (John Wiley &amp; Sons, Hoboken, 2013).</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="how-to-reference-items">
+<h3>How to Reference Items<a class="headerlink" href="#how-to-reference-items" title="Permalink to this heading">#</a></h3>
+<p>The library AIP referencing guide provides examples of how to reference various different types of media, but here is a limited selection of some of the most common items that you will need to know how to reference correctly.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Book with one author</p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] INITIAL(S). Surname, Title of book, Edition (if not the first edition). (Publisher, Place of publication, Year of publication).</p>
+<p>[6] M.S. Longair, High Energy Astrophysics, 2nd ed., reprinted with corrections. (Taylor &amp; Francis, London, 1997).</p>
+<p>[7] British Ecological Society, Ecological Concepts: The Contribution of Ecology to an Understanding of the Natural World. (Blackwell Scientific, Oxford, 1989).</p>
+<p><strong>Note:</strong> Only list the edition of the book if it is any edition other than the first.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Book with two or three authors</p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] INITIAL(S). Surname and INITIAL(S). Surname, Title of book, Edition (if not the first edition). (Publisher, Place of publication, Year of publication).</p>
+<p>or</p>
+<p>[  ] INITIAL(S). Surname, INITIAL(S). Surname, and INITIAL(S). Surname, Title of book, Edition (if not the first edition). (Publisher, Place of publication, Year of publication).</p>
+<p>[8] B.W. Carroll and D.A. Ostlie, An Introduction to Modern Astrophysics, 2nd ed. (Pearson/Addison Wesley, San Francisco, 2007).</p>
+<p>[9] T.K. Gaisser, R. Engel, and E. Resconi, Cosmic Rays and Particle Physics, 2nd ed. (Cambridge University Press, Cambridge, 2016).</p>
+<p><strong>Note:</strong> Only list the edition of the book if it is any edition other than the first.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Book with four or more authors</p>
+<p><strong>In the reference list</strong>
+[  ] INITIAL(S). Surname et al., Title of book, Edition (if not the first edition). (Publisher, Place of publication, Year of publication).</p>
+<p>[11] J. Hester et al., 21st Century Astronomy, 3rd ed. (W.W Norton, New York, 2003).</p>
+<p><strong>Note:</strong> Only list the edition of the book if it is any edition other than the first.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Book Chapter </p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] Author’s INITIAL(S). Surname, in Title of book, Ed. by Editor’s INITIAL(S). Surname. Edition (if not the first edition). (Publisher, Place of publication, Year of publication), starting page number.</p>
+<p>[12] M. Tegmark, in Many Worlds? Evertett, Quantum Theory and Reality, Ed. by S. Saunders et al., (Oxford University Press, Oxford, 2010), p.554.</p>
+<p><strong>Note:</strong> Only list the edition of the book if it is any edition other than the first.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Journal Article </p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] INITIAL(S). Surname, Title of Journal. Volume(Part), Starting page (Year).</p>
+<p>[20] G. Aad et al., Phys. Lett. B., 716(1), 1 (2012).</p>
+<p>[21] A. Liu and M. Tegmark, MNRAS. 49(4), 3491 (2012).</p>
+<p><strong>Notes:</strong> Use abbreviations for titles of journals. The part number may be omitted if the volume has a continuous paging sequence.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Thesis or Dissertation</p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] Author’s INITIAL(S). Surname, Title, Type and level of award. (Awarding body, Place of awarding body, Year).</p>
+<p>[29] R.J. Allison, The Dynamical Evolution of Young Star Clusters, PhD Thesis. (University of Sheffield, Sheffield, 2011).</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Webpage</p>
+<p>Whilst there is a lot of useful information online, the information you may find through search engines is not necessarily reliable, up to date or accurate. It’s best to stick to sources of information that have been fact-checked such as peer-reviewed journals and books from reputable publishers. With the exception of ‘professional’ websites such as pre-print databases (e.g. arXiv) and official web pages of scientific collaborations or organisations such as the ATLAS Experiment website, you should think very carefully before using web pages as source material for academic assignments.</p>
+<p><strong>In the reference list</strong></p>
+<p>[  ] INITIAL(S). Surname, OR Organisation, Title of Web page, WWW document, (URL).</p>
+<p>[30] J. Schneider, The Extrasolar Planets Enyclopedia, WWW document, (http://exoplanet.eu/).</p>
+<p>[31] CERN, ATLAS Detector: Magnet System, WWW document, (http://atlas.cern/discover/detector/magnet-system).</p>
+<p><strong>Note:</strong> There may be a corporate author of a website, rather than a person.</p>
+</div>
+<p>When you’ve only got a small number of references it might be okay to format them by hand. But as you move through your course, you’ll find your reports have more and more references. At that point, please use a reference manager like Mendeley, EndNote or Zotero. When using StarPlus you are able to download reference information directly to then upload it into your reference manager. This saves you the trouble of having to note down information such as authors, publishers, dates etc. and the reference manager will then be able to produce the reference in the appropriate style automatically.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="activities">
+<h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
+</div>
+<div class="section" id="in-this-session-you-are-going-to-begin-drafting-the-introduction-theory-and-methods-section-of-a-report">
+<h2>In this session you are going to begin drafting the introduction, theory and methods section of a report.<a class="headerlink" href="#in-this-session-you-are-going-to-begin-drafting-the-introduction-theory-and-methods-section-of-a-report" title="Permalink to this heading">#</a></h2>
+<div class="section" id="find-relavent-references">
+<h3>1. Find Relavent References<a class="headerlink" href="#find-relavent-references" title="Permalink to this heading">#</a></h3>
+<p>For the exeperiment you have chosen, you will consider what the relavent physics is and find some examples of appropriate sources of information. This includes both academic literature and textbooks.</p>
+<ul class="simple">
+<li><p>Find five sources of information that may be useful to draw upon in your introduction and theory section.</p></li>
+<li><p>For each source of information, make the reference that will go at the end of your report in the bibliography using the AIP referencing style. Do this manually using the examples above.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="write-the-introduction">
+<h3>2. Write the Introduction<a class="headerlink" href="#write-the-introduction" title="Permalink to this heading">#</a></h3>
+<p>In this section, you should tell the reader what topic your work is in, why it is important, what other people have done in the field and what you plan to do. It’s also a good idea to briefly tell your reader what to expect from the rest of the report. You may wish to use the lab report template for this section below to help you write this section.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Suggested Introduction Structure</p>
+<p><strong>Paragraph 1</strong> should provide context for the work you are doing i.e  what is the topic and why is it important. The first paragraph should:</p>
+<ul class="simple">
+<li><p>include a topic sentence that starts by providing the broad context of the topic e.g. “Efficiency is an important feature of …”</p></li>
+<li><p>Define any important terms “Thermal efficiency is the …”</p></li>
+<li><p>Narrow the context towards the research area you have investigated e.g. “Measuring efficiency presents many challenges …”</p></li>
+<li><p>Explain why is this research area is important.</p></li>
+<li><p>State if this research has any uses or applications?</p></li>
+<li><p>Identify the problem: “A better understanding of engine efficiency leads to better …”</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should provide a literature review and identify a niche that needs filling. Here you will provide summary of previous methods and/or measurements by other scientists. The second paragraph should:</p>
+<ul class="simple">
+<li><p>State key numerical values +/- errors (make sure to use references for these).</p></li>
+<li><p>Mention key differences in methods or results.</p></li>
+<li><p>Identify a gap in the literature e.g “While accurate, all these methods are expensive. There has been little work in a more accessible and economical method …”</p></li>
+</ul>
+<p><strong>Paragraph 3.</strong> should highlight your work in this paper and how it can fill the gap identified in the literature. You should</p>
+<ul class="simple">
+<li><p>Clearly state the research question of your investigation e.g. “Here in this investigation, we aim to  …”</p></li>
+<li><p>Note the method or approach you used to answer your research question (do not go into too much detail here.)</p></li>
+<li><p>Breifly state if there were there any novel features or findings.</p></li>
+<li><p>Summarise the structure of the rest of this paper. “In Section 2, we discuss …”.</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="write-the-theory-section">
+<h3>3. Write the Theory Section<a class="headerlink" href="#write-the-theory-section" title="Permalink to this heading">#</a></h3>
+<p>After the introduction section, the theoretical details of your research question will be described here. While this is typically a short section at around half a page, you should aim to introduce the key physics as a theoretical model. The end of this section should make a theoretical prediction e.g. “Freefall time as a function of distance t(s) is predicted by Equation 1 to be a power law …”. This sets up the rest of your paper to show how your experiment tested this prediction. If this is a theoretical investigation then this Theory section will be larger and will build up the necessary layers of the physical model with many references throughout.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Suggested Theory Structure</p>
+<p><strong>Paragraph 1</strong> should:</p>
+<ul class="simple">
+<li><p>Provide a general description of the physics relevant to your research question.</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should:</p>
+<ul class="simple">
+<li><p>Outline the theoretical principles using mathematical formulae. If this is an experimental article, detailed derivations of are not required. You should avoid showing trivial derivations of equations (if needed add derivations to an appendix).</p></li>
+<li><p>List any assumptions used in the mathematical model.</p></li>
+<li><p>Include appropriate references if needed (typically a good text book).</p></li>
+<li><p>State what the prediction of the theoretical model is.</p></li>
+</ul>
+<p>Equations can be inserted either inline if they are compact such as:  <span class="math notranslate nohighlight">\(E=mc^2\)</span>. Ensure that the variables are in italics.</p>
+<p>In most cases you would like a numbered equation, which where the equation is centred on a separate line and an equation number is positioned on the right margin, for example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-da9079c7-e9a0-484e-b846-fa7df760a0e9">
+<span class="eqno">(2)<a class="headerlink" href="#equation-da9079c7-e9a0-484e-b846-fa7df760a0e9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+t = \sqrt{\frac{2s}{g}}.
+\end{equation}\]</div>
+<p>The main advantage of a numbered equation is that it can be cross referenced in the text. For example, “ The free-fall time is described by Equation 1.” The equation can be cross referenced in subsequent sections, such as in the “Results and Analysis” section, without having to restate the equation.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="write-the-methodology">
+<h3>4. Write the Methodology<a class="headerlink" href="#write-the-methodology" title="Permalink to this heading">#</a></h3>
+<p>This is where you tell your reader how you collected your data and give them information to allow them to repeat your experiment if they wish to do so. At the same time, it shouldn’t be a copy of your lab script, a list of instructions or a recipe. There’s no need to tell your reader about the equipment setting that didn’t work, just the ones that did.</p>
+<p>It is often good to include a useful, labelled diagram of the set up. If you are using any equipment that isn’t standard (like a ruler would be), give your reader the name and model number.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Suggested Methodology Structure</p>
+<p><strong>Paragraph</strong> 1 should:</p>
+<ul class="simple">
+<li><p>Introduce and describe the basic concept of the method and how this can be used to answer your research question.</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should describe the actual setup used:</p>
+<ul class="simple">
+<li><p>Show a figure containing labelled diagram of setup.</p></li>
+<li><p>Refer to diagram in text ( “… as shown in Figure 1.” )</p></li>
+<li><p>State what main diagnostics were used (with model name) e.g. “the current was measured using a PhysTeX oscilliscope.”</p></li>
+<li><p><strong>Do not</strong> list every item!</p></li>
+<li><p>State the key steps you used “The position of the detector was …”</p></li>
+<li><p>Do not write a list of instructions as your methodology, instead write an account of what was actually done.</p></li>
+</ul>
+<p><img alt="" src="_images/ReportFigure.png" /></p>
+<p>Figure 1: Experimental setup to measure freefall of a steel ball. The timer measures the fall time from the release switch until the ball passes through the light gate.</p>
+<p><strong>Paragraph 3</strong> should highlight key errors and limitations:</p>
+<ul class="simple">
+<li><p>A separate paragraph may be useful to explicitly state your estimates for reading errors “the resolution of the detector was …”. Also if you are aware of any systematic errors state these also. State other limitations such as alignment issues or difficulties in the setup. How were these problems minimised?</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="reference-managers">
+<h3>5. Reference Managers<a class="headerlink" href="#reference-managers" title="Permalink to this heading">#</a></h3>
+<p>Once you have written your the first three sections of the report, first ask for some feedback on the work you have done, and then you are free to take a look at a few different reference managers. You should read about the following on the <a class="reference external" href="https://students.sheffield.ac.uk/library/reference-management">university website</a> before deciding which one you would like to test:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://students.sheffield.ac.uk/library/reference-management#endnote">EndNote 21</a></p></li>
+<li><p><a class="reference external" href="https://students.sheffield.ac.uk/library/reference-management#zotero">Zotero</a></p></li>
+<li><p><a class="reference external" href="https://students.sheffield.ac.uk/library/reference-management#mendeley">Mendeley</a></p></li>
+</ul>
+<p>Learning how to use a reference manager now will make your life much easier later when you are writing large project reports with many many sources of information.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Scientific_Report.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Scientific Report</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ResultsDiscussionConclusion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LaTeX, Results, Discussion and Conclusion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sourcing-and-referencing-information">Sourcing and Referencing Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#referencing-styles">Referencing Styles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-reference-items">How to Reference Items</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-session-you-are-going-to-begin-drafting-the-introduction-theory-and-methods-section-of-a-report">In this session you are going to begin drafting the introduction, theory and methods section of a report.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-relavent-references">1. Find Relavent References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-introduction">2. Write the Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-theory-section">3. Write the Theory Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-methodology">4. Write the Methodology</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-managers">5. Reference Managers</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Ross Mathieson
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
