@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Scientific Report &#8212; PHYS11006 - Computing Skills Workshop</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Scientific_Report';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Referencing, Introduction, Theory and Methods" href="IntroMethods.html" />
+    <link rel="prev" title="Scientific Communication" href="Scientific_Communication.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHY11006 Academic Writing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 9</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Scientific_Communication.html">Scientific Communication</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Scientific Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 10</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="IntroMethods.html">Referencing, Introduction, Theory and Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 11</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ResultsDiscussionConclusion.html">LaTeX, Results, Discussion and Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 12</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ComputationalWriting.html">Computational Tools for Writing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FScientific_Report.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Scientific_Report.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Scientific Report</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-lab-report">Writing a Lab Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-a-lab-report">The Structure of a Lab Report</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-and-results">Analysis and Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-and-conclusion">Discussion and Conclusion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-error-analysis">Appendix: Error Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language">Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-ideas">Flow of ideas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verb-tenses">Verb tenses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-changed-perspective">A Changed Perspective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite">Rewrite</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-scientific-report">
+<h1>The Scientific Report<a class="headerlink" href="#the-scientific-report" title="Permalink to this heading">#</a></h1>
+<div class="section" id="writing-a-lab-report">
+<h2>Writing a Lab Report<a class="headerlink" href="#writing-a-lab-report" title="Permalink to this heading">#</a></h2>
+<p>You will be writing scientific reports throughout your degree. At Level 1, you have a series of lab homeworks you need to complete, with some of them involving writing different sections of a report. At the end of each semester, you will also need to submit a full report based on one of your lab experiments.</p>
+<p>Learning to write a good lab report takes time and practise. In order to get better at writing reports quickly, it is imperative that you spend time reviewing the feedback you recieve in the lab. <strong>Feedback is the most valubale thing that we can provide you with</strong> - if you do not review your feedback you will be unable to identify your areas for improvement and this will greatly impact your development.</p>
+<p>The good news is that you will be given a lab report template for your level-1 reports, which you can (and should) use to structure your reports. It tells you what the main sections of a report are, and gives you tips about how to structure your reports. The original document can be found <a class="reference external" href="https://docs.google.com/document/d/1wsxFKrFh5lpN-O9Tj7YTbtNdC0EHZZ47/edit">here</a> and you may want to save a copy to edit when writing your own reports, but a breakdown of it is also provided below.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-structure-of-a-lab-report">
+<h2>The Structure of a Lab Report<a class="headerlink" href="#the-structure-of-a-lab-report" title="Permalink to this heading">#</a></h2>
+<div class="section" id="abstract">
+<h3>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading">#</a></h3>
+<p>An abstract is typically a single short paragraph that gives the most important details from your report:</p>
+<ul class="simple">
+<li><p>Experiment: what was investigated?</p></li>
+<li><p>Method: how? State specific technique.</p></li>
+<li><p>Result: state numerical result +/- error and units.</p></li>
+<li><p>Comparison with results in literature: compare to predictions or measurements from the literature</p></li>
+<li><p>Limitations (if any): if needed, state any critical limitations of your investigation.</p></li>
+</ul>
+<p>The trick to writng an abstract is to keep it super concise. It is not an introduction and no equations or graphics are needed. Each point above should be caputred by a single sentance or less.</p>
+</div>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h3>
+<p><strong>Paragraph 1</strong> should provide context for the work you are doing i.e  what is the topic and why is it important. The first paragraph should:</p>
+<ul class="simple">
+<li><p>include a topic sentence that starts by providing the broad context of the topic e.g. “Efficiency is an important feature of …”</p></li>
+<li><p>Define any important terms “Thermal efficiency is the …”</p></li>
+<li><p>Narrow the context towards the research area you have investigated e.g. “Measuring efficiency presents many challenges …”</p></li>
+<li><p>Explain why is this research area is important.</p></li>
+<li><p>State if this research has any uses or applications?</p></li>
+<li><p>Identify the problem: “A better understanding of engine efficiency leads to better …”</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should provide a literature review and identify a niche that needs filling. Here you will provide summary of previous methods and/or measurements by other scientists. The second paragraph should:</p>
+<ul class="simple">
+<li><p>State key numerical values +/- errors (make sure to use references for these).</p></li>
+<li><p>Mention key differences in methods or results.</p></li>
+<li><p>Identify a gap in the literature e.g “While accurate, all these methods are expensive. There has been little work in a more accessible and economical method …”</p></li>
+</ul>
+<p><strong>Paragraph 3.</strong> should highlight your work in this paper and how it can fill the gap identified in the literature. You should</p>
+<ul class="simple">
+<li><p>Clearly state the research question of your investigation e.g. “Here in this investigation, we aim to  …”</p></li>
+<li><p>Note the method or approach you used to answer your research question (do not go into too much detail here.)</p></li>
+<li><p>Breifly state if there were there any novel features or findings.</p></li>
+<li><p>Summarise the structure of the rest of this paper. “In Section 2, we discuss …”.</p></li>
+</ul>
+</div>
+<div class="section" id="theory">
+<h3>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h3>
+<p>After the introduction section, the theoretical details of your research question will be described here. While this is typically a short section at around half a page, you should aim to introduce the key physics as a theoretical model. The end of this section should make a theoretical prediction e.g. “Freefall time as a function of distance t(s) is predicted by Equation 1 to be a power law …”. This sets up the rest of your paper to show how your experiment tested this prediction. If this is a theoretical investigation then this Theory section will be larger and will build up the necessary layers of the physical model with many references throughout.</p>
+<p><strong>Paragraph 1</strong> should:</p>
+<ul class="simple">
+<li><p>Provide a general description of the physics relevant to your research question.</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should:</p>
+<ul class="simple">
+<li><p>Outline the theoretical principles using mathematical formulae. If this is an experimental article, detailed derivations of are not required. You should avoid showing trivial derivations of equations (if needed add derivations to an appendix).</p></li>
+<li><p>List any assumptions used in the mathematical model.</p></li>
+<li><p>Include appropriate references if needed (typically a good text book).</p></li>
+<li><p>State what the prediction of the theoretical model is.</p></li>
+</ul>
+<p>Equations can be inserted either inline if they are compact such as:  <span class="math notranslate nohighlight">\(E=mc^2\)</span>. Ensure that the variables are in italics.</p>
+<p>In most cases you would like a numbered equation, which where the equation is centred on a separate line and an equation number is positioned on the right margin, for example:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8f7ab3ba-18eb-4308-ab04-ab37a2c4d571">
+<span class="eqno">(1)<a class="headerlink" href="#equation-8f7ab3ba-18eb-4308-ab04-ab37a2c4d571" title="Permalink to this equation">#</a></span>\[\begin{equation}
+t = \sqrt{\frac{2s}{g}}.
+\end{equation}\]</div>
+<p>The main advantage of a numbered equation is that it can be cross referenced in the text. For example, “ The free-fall time is described by Equation 1.” The equation can be cross referenced in subsequent sections, such as in the “Results and Analysis” section, without having to restate the equation.</p>
+</div>
+<div class="section" id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h3>
+<p><strong>Paragraph</strong> 1 should:</p>
+<ul class="simple">
+<li><p>Introduce and describe the basic concept of the method and how this can be used to answer your research question.</p></li>
+</ul>
+<p><strong>Paragraph 2</strong> should describe the actual setup used:</p>
+<ul class="simple">
+<li><p>Show a figure containing labelled diagram of setup.</p></li>
+<li><p>Refer to diagram in text ( “… as shown in Figure 1.” )</p></li>
+<li><p>State what main diagnostics were used (with model name) e.g. “the current was measured using a PhysTeX oscilliscope.”</p></li>
+<li><p><strong>Do not</strong> list every item!</p></li>
+<li><p>State the key steps you used “The position of the detector was …”</p></li>
+<li><p>Do not write a list of instructions as your methodology, instead write an account of what was actually done.</p></li>
+</ul>
+<p><img alt="" src="_images/ReportFigure.png" /></p>
+<p>Figure 1: Experimental setup to measure freefall of a steel ball. The timer measures the fall time from the release switch until the ball passes through the light gate.</p>
+<p><strong>Paragraph 3</strong> should highlight key errors and limitations:</p>
+<ul class="simple">
+<li><p>A separate paragraph may be useful to explicitly state your estimates for reading errors “the resolution of the detector was …”. Also if you are aware of any systematic errors state these also. State other limitations such as alignment issues or difficulties in the setup. How were these problems minimised?</p></li>
+</ul>
+</div>
+<div class="section" id="analysis-and-results">
+<h3>Analysis and Results<a class="headerlink" href="#analysis-and-results" title="Permalink to this heading">#</a></h3>
+<p><strong>Paragraph 1</strong> should introduce and discuss the measured data:</p>
+<ul class="simple">
+<li><p>State what was measured and how many sets of data were recorded</p></li>
+<li><p>Was the data then processed in some way? Describe any calculations clearly.</p></li>
+<li><p>Refer to the figure containing the graph with caption.</p></li>
+<li><p>Describe the trend in the measured data.</p></li>
+<li><p>Are any outliers present?</p></li>
+<li><p>State that the error bars represent the error on the mean .</p></li>
+<li><p>State range of statistical errors e.g. “ variation of 15% ..”</p></li>
+<li><p>Comment briefly on any other issues with the measured data.</p></li>
+</ul>
+<p><img alt="" src="_images/ReportFigure2.png" /></p>
+<p>Figure 1: Measurements of free-fall for a steel sphere. A least squares fit of the data is also shown. The spheres had mass of 100g and initial velocity of zero. Error bars on the y-data are calculated using the standard  error of the mean of repeat measurements. The x errorbars are too small to be seen.</p>
+<p><strong>Paragraph 2</strong>: After introducing the measured data, next describe the analysis methods. In most cases, this may be a linear correlation analysis. First describe what the goal of the analysis is and describe the method used:</p>
+<ul class="simple">
+<li><p>Was a linearisation of the data or other processing required?</p></li>
+<li><p>Was a least squares fit, a weighted (chi-squared) fit used?</p></li>
+<li><p>Were the error bars of the measured data considered in the analysis?</p></li>
+<li><p>Refer back to the figure stating that “this linear analysis is also shown in Fig. 1.”</p></li>
+</ul>
+<p><strong>Paragraph 3</strong> is where you should state the analysis results:</p>
+<ul class="simple">
+<li><p>What was the goodness of fit? (See correlation coefficient, r2, for linear fit or discuss reduced chi-sqaure.)</p></li>
+<li><p>Did the fit produce a key parameter such as the slope or intercept?</p></li>
+<li><p>State slope±error with units</p></li>
+<li><p>State intercept±error with units</p></li>
+<li><p>Ensure errors are rounded to 1 significant figure. Next ensure that both slope and intercept values are rounded to the same number of decimal places as their respective errors</p></li>
+<li><p>Use the analysis results to calculate parameters of interest. This typically involves using the slope and it’s error value. For example, if the value of the slope (m) was being used to determine the acceleration due to gravity then g=m and the uncertainty or error on the value of g is the error on the slope, Δm.  given by: Δg=gmm.                                                              (1)</p></li>
+<li><p>In more complex cases involving multiple sources of errors, present a full error propagation here as per your lectures.</p></li>
+<li><p>State the final result: “from this analysis a result of g=9.77±0.07 m/s2 was calculated.”.</p></li>
+</ul>
+</div>
+<div class="section" id="discussion-and-conclusion">
+<h3>Discussion and Conclusion<a class="headerlink" href="#discussion-and-conclusion" title="Permalink to this heading">#</a></h3>
+<p><strong>Paragraph 1</strong> is where you will interpret and discuss the analysis results:</p>
+<ul class="simple">
+<li><p>What do the slope, intercept, r2 values mean?</p></li>
+<li><p>Describe their physical significance.</p></li>
+<li><p>Discuss the uncertainties/errors.</p></li>
+<li><p>Were they large &gt;10% or quite small ~1%?</p></li>
+<li><p>What was the primary source of error?</p></li>
+<li><p>Was there any sign of systematic errors such as a non-zero intercept?</p></li>
+</ul>
+<p><strong>Paragraph 2</strong>:</p>
+<ul class="simple">
+<li><p>State again the overall result e.g. <span class="math notranslate nohighlight">\( g = 9.77 \pm 0.07 \,m\,s^2\)</span>.</p></li>
+<li><p>Is the result valid? How does it compare with theory?</p></li>
+<li><p>Compare with other known or accepted data.</p></li>
+<li><p>Find references to other published work if possible.</p></li>
+<li><p>Keep your tone objective and critical with regards to your results.</p></li>
+<li><p>Describe aspects that could be improved in the future. Try to be specific here. How would you redesign the experiment? Are there any examples in the published literature you could follow? Provide references and cite them numerically [1].</p></li>
+</ul>
+<p><strong>Paragraph 3</strong>: A short paragraph stating main results and limitations.</p>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h3>
+<p>It is important that you note where the information you used in your report came from and we do this using citations and a bibliograhy. Typically in a physics report we will place numerical citations e.g. “[1]” in the text where we have drawn upon information and then use an APA refernce style in our bibliography (list of sources). For example, take a look at the example of the biliography below:</p>
+<p>[1] Surname, first initial, Title of article, Journal, Number, (Year)</p>
+<p>[2] Laby &amp; Kaye, Tables of physical and chemical constants, Longman (1995)</p>
+<p>[3] National Physical Laboratory UK, Tables of physical and chemical constants,<br />
+www.kayelaby.npl.co.uk  (2005)</p>
+<p>[4] R. Bach et al, Controlled double-slit electron diffraction, New J. Phys. 15 033018 (2013)</p>
+</div>
+<div class="section" id="appendix-error-analysis">
+<h3>Appendix: Error Analysis<a class="headerlink" href="#appendix-error-analysis" title="Permalink to this heading">#</a></h3>
+<p>An appendix is an optional section for when you would like to include additional detail, for example, the derivation of theoretical results, a listing of a computer program or other bulky item that would break up the flow of the report.</p>
+<p>In this case you can put an appendix including this detail at the end of the report and refer to it in the text. Do not put important graphs of results in an appendix. Your data are of prime importance and should appear in the main body of the text. Remember that an appendix is like a normal section and uses paragraphs to provide context! For example:</p>
+<p>“In this case the main error on the value of g is the error on the slope given by:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta g = g \frac{\Delta m}{m}, \]</div>
+<p>which results <span class="math notranslate nohighlight">\(\delta g = 0.7 m\, s^{2}\)</span> and hence a 8% uncertainty on our final value of <span class="math notranslate nohighlight">\(g\)</span>.”</p>
+<p>If the uncertainty depends on multiple variables the simply use the quadrature formulae:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta Z = Z \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}. \]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="language">
+<h2>Language<a class="headerlink" href="#language" title="Permalink to this heading">#</a></h2>
+<p>It is often the case that as students are invested in the content of their lab report, that their choice of language and sentance structure may inadvertently take away from the clarity of their reporting. The way in which a report is written, for better or worse, is often the key factor that a reader will use to gauge the quality of the work. It is therefore key that we are able to write appropriately.</p>
+<p>A report should be written:</p>
+<ul class="simple">
+<li><p><strong>Clearly</strong> - the report should be written in a way so that it is perfectly clear to the reader what was done and why. There should be no ambiguity in what is written. For example, when writing an account of how the data was collected and analysed, would somebody reading your report be able to repeat the experiment as you did it without having to make any assumptions about the proceedure you followed.</p></li>
+<li><p><strong>Concisely</strong> - the report should be written in a breif but comprehensive way. This is often very challenging for inexpereinced report writers, but is something that develops naturally through practise. Esentially, we want to avoid using words unnecassarily so that the reader is able to efficiently extract information without comprimising the clarity of what is written. This is often achieved by restructuring sentances after proof reading the ideas you have put onto the page. Writing concisely and using shorter sentances also makes the report more engaging to read.</p></li>
+<li><p><strong>In a passive voice</strong> - it is best practise to write a report neither in the first or second person i.e. “I measured the mass of the shotput” or “we recorded the temperature of the object”. Instead the report should be written as if you were an objective observer floating above the experiment as it was performed i.e. “the mass of the shotput was measured” or “the temperature of the object was recorded”. As a report is an account of what <strong>was</strong> done, it should be written in the <strong>past</strong> tense.</p></li>
+<li><p><strong>Formally</strong> - a lab report is a formal reference document and should be written as such. As such you should avoid using slang and using contractions (<strong>Do not</strong> use “<strong>don’t</strong>). At the same time, it is important that you do not write too formally or superfluously (arguably the use of “superflously” was a little superflous of me.).</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>The easiest way to improve your lab report before you even submit it is to thoroughly proofread it. It sounds obvious, but when we reread what we have written we often scan through it and assume it reads as we intended it to when writing. The reality is that often we type faster than we think and the quality of our commuinication suffers as a result.</p>
+<p>Taking time to carefully proofread will give you the opportunity to spot typos and consider if you have structured your writing as clearly and concisely as you intended.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="flow-of-ideas">
+<h3>Flow of ideas<a class="headerlink" href="#flow-of-ideas" title="Permalink to this heading">#</a></h3>
+<p>In a lab report, your ideas should follow each other logically. This will help your reader make sense of what you are trying to tell them and it also means you are not jumping from one idea to the next without introducing them. A simple way to achieve this is to, repeat an idea or phrase at the beginning of the following sentance. Take a look at the following paragraph and try to identify how ideas flow throughout it:</p>
+<ul class="simple">
+<li><p>“<em>Biting flies are serious pests of livestock [13–15] and previous studies have reported that biting flies affect the behavior of cattle and cause economic losses [16–18]. In fact, biting flies reduce grazing, feeding, and bedding down time of cattle and increase fly-repelling behaviors (e.g. head throwing, foot stamping, skin twitching, and tail flicking) and bunching behaviors of cattle [15, 18]. Bunching increases heat stress and risk of injury as animals jostle for a better position to avoid biting flies, and this can reduce weight gains in feedlot beef cattle and milk yield in dairy cows [15, 17, 18].</em>”</p></li>
+</ul>
+<div class="admonition-topic-sentences admonition">
+<p class="admonition-title">Topic Sentences</p>
+<p>These are sentances that appear in all paragraphs and usually the first sentence of a paragraph. They tell the reader what that paragraph is about and often idicate where the parahraph fits into the whole report. By reading just the topic sentences of a report, you should be able to see the flowing narrative built by the writer which to helps link ideas and improve the readability of the report.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="verb-tenses">
+<h3>Verb tenses<a class="headerlink" href="#verb-tenses" title="Permalink to this heading">#</a></h3>
+<p>A verb is a type of word expressing an action; it tells us what the subject of our sentence is doing.</p>
+<p><strong>Past tense:</strong></p>
+<ul class="simple">
+<li><p>Describe stuff you did in the past (method you used, results you obtained, analysis you did)</p></li>
+<li><p>Describe what other people did in the past that was applicable at that point in time (e.g. physicists believed atomic nuclei were made entirely out of protons)</p></li>
+</ul>
+<p><strong>Present tense:</strong></p>
+<ul class="simple">
+<li><p>Use it when you are talking about general concepts, established knowledge and stuff that is still considered true (“Gravity is one of the four fundamental forces of nature”).</p></li>
+<li><p>To talk about the results of previous research provided they still hold true (“research shows that…”</p></li>
+</ul>
+<p><strong>Future tense:</strong></p>
+<ul class="simple">
+<li><p>When you’re talking about future work (“Future studies will be required to understand this phenomenon”) - note here you could just as well say “future studies are required”.</p></li>
+<li><p>When indicating possible projections or consequences (“It seems plausible to assume that temperatures will continue to rise”).</p></li>
+</ul>
+<div class="admonition-additional-resources admonition">
+<p class="admonition-title">Additional Resources</p>
+<p>You may wish to also reivew the <a class="reference external" href="https://xerte.york.ac.uk/play.php?template_id=2189#page2">York Academic Writing Style Guide</a>. T</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="activities">
+<h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
+<div class="section" id="a-changed-perspective">
+<h3>A Changed Perspective<a class="headerlink" href="#a-changed-perspective" title="Permalink to this heading">#</a></h3>
+<p>Take a look at the document you made earlier that highlights the different sections you identified in the literature.</p>
+<ul class="simple">
+<li><p>Did you correctly identify the different parts outlined in the report template above?</p></li>
+<li><p>Where you missed features outlined in the report template above, now go back and identify where these are in a your chosen example of literature. I would recommend highlighting each component.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="rewrite">
+<h3>Rewrite<a class="headerlink" href="#rewrite" title="Permalink to this heading">#</a></h3>
+<p>The phrases below can be written more suitibly for a lab report. Have a go to try and get used to a writing formally in the passive voice, and with the features you would want included in the report.</p>
+<ol class="arabic simple">
+<li><p>“We used a ruler to micrometer to measure the thickness of the wire because the gaps on a ruler aren’t small enough.”</p></li>
+<li><p>“You should use a multimeter to measure the current.”</p></li>
+<li><p>“The line of best fit looks good for the data.”</p></li>
+<li><p>“I think to improve the experiment a light gate would be better for seeing how long it takes for the mass to fall as I was not always fast enough when using the stop watch.”</p></li>
+</ol>
+<div class="dropdown admonition">
+<p class="admonition-title">Example Rewrite (1).</p>
+<p>The thickness of the wire was measured using a micrometer with a precision of 0.01 mm after it was noted that a standard ruler did not have a suitible resolution.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Scientific_Communication.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scientific Communication</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IntroMethods.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Referencing, Introduction, Theory and Methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-lab-report">Writing a Lab Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-a-lab-report">The Structure of a Lab Report</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-and-results">Analysis and Results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-and-conclusion">Discussion and Conclusion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-error-analysis">Appendix: Error Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#language">Language</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-ideas">Flow of ideas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verb-tenses">Verb tenses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-changed-perspective">A Changed Perspective</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite">Rewrite</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Ross Mathieson
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
