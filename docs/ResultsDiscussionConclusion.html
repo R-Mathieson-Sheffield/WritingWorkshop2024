@@ -376,9 +376,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produce-a-high-quality-plot">1. Produce a High Quality Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-results-section">2. Write the Results Section</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-discussion">3. Write the Discussion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-conclusion">4. Write the Conclusion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-analysis-and-results-section">2. Write the Analysis and Results Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-discussion-and-conclusion">3. Write the Discussion and Conclusion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-report-in-latex">5. Writing a Report in LaTeX</a></li>
 </ul>
 </li>
@@ -401,14 +400,14 @@ document.write(`
 <p>By the end of this session you should:</p>
 <ul class="simple">
 <li><p>Understand how to present information in a results section.</p></li>
-<li><p>Have written a drafts of the results, discussion and conclusion of a lab report.</p></li>
+<li><p>Have written drafts of the results, discussion and conclusion of a lab report.</p></li>
 </ul>
 <p>In this session, we are going to work towards writing the results, discussion and conclusion for one of your lab experiments.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="latex-and-overleaf">
 <h2>LaTeX and Overleaf<a class="headerlink" href="#latex-and-overleaf" title="Permalink to this heading">#</a></h2>
-<p>Overleaf is a little like Google docs, but for writing in LaTeX, which is a type of code we can use to write documents. While you are under no obligation to start using it, we thought it would be worth letting you know about it as all you need to do is make a free account and you won’t need to install anything to use it.</p>
+<p>Overleaf is a little like Google docs, but for writing in LaTeX, which is a type of code we can use to write documents. While you are under no obligation to start using it, we thought it would be worth letting you know about it as all you need to do is make a free account.</p>
 <p>Overleaf allows you to edit your LaTeX code and see a realtime render of what your document will look like as shown below:</p>
 <p><img alt="" src="_images/Overleaf.png" /></p>
 <p>Learning to use LaTeX is a worthwhile skill as:</p>
@@ -427,7 +426,7 @@ document.write(`
 <hr class="docutils" />
 <div class="section" id="writing-equations">
 <h3>Writing Equations<a class="headerlink" href="#writing-equations" title="Permalink to this heading">#</a></h3>
-<p>As mentioned above, one of the key reasons people use LaTeX is that is very easy to format mathematical equations using it. This is obviously very useful to a Physicist who will likely format many equations in each report they write. To write an inline equation we place the expression between dollar signs <span class="math notranslate nohighlight">\( E = mc^2 \)</span>, but to get a numbered equation on its own line we use:</p>
+<p>As mentioned above, one of the key reasons people use LaTeX is that is very easy to format mathematical equations using it. This is obviously very useful to a Physicist who will likely format many equations in each report they write. To write an inline equation we place the expression between dollar signs, but to get a numbered equation on its own line we use:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">equation</span><span class="p">}</span>
@@ -438,8 +437,8 @@ document.write(`
 </div>
 </div>
 <p>This will render the equation as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0772d068-5cb8-491d-9eff-c133754812bd">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0772d068-5cb8-491d-9eff-c133754812bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4343e357-af74-4955-8f8d-3b8b04b88abf">
+<span class="eqno">(3)<a class="headerlink" href="#equation-4343e357-af74-4955-8f8d-3b8b04b88abf" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^2
 \end{equation}\]</div>
 <p>To raise something to the power, we simply use “^”. This will superscript the character following it. To superscript multiple characters we simply follow “^” with curly brackets, for example:</p>
@@ -453,8 +452,8 @@ document.write(`
 </div>
 </div>
 <p>will return:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae4ee958-c5f9-4ee9-a5a4-ff6505347493">
-<span class="eqno">(4)<a class="headerlink" href="#equation-ae4ee958-c5f9-4ee9-a5a4-ff6505347493" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-79e9d2e9-9b2c-4741-b593-04eae4ac18a1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-79e9d2e9-9b2c-4741-b593-04eae4ac18a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^{2x + c}.
 \end{equation}\]</div>
 <p>Similarly, if we would like to subscript something, we just use the underscore “_”. If we want to introduce a greek letter, we simply type it out following a backslash. If we capitalise the name of the letter, it will return the capitalised symbol - be careful with this as capitalised and lowercase greek letters are often used to represent different things in Physics. Take a look at the following equation in Latex format and see if you can decipher what it will render as:</p>
@@ -468,13 +467,13 @@ document.write(`
 </div>
 </div>
 <p>This renders as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-656c3873-fc6d-4de5-8d95-ed60c2bbb597">
-<span class="eqno">(5)<a class="headerlink" href="#equation-656c3873-fc6d-4de5-8d95-ed60c2bbb597" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ad57eea1-2866-4a01-a259-3a6d0bd6af01">
+<span class="eqno">(5)<a class="headerlink" href="#equation-ad57eea1-2866-4a01-a259-3a6d0bd6af01" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{ \left( \frac{\Delta A}{A} \right)^2 + \left( \frac{\Delta B}{B} \right)^2 }.
 \end{equation}\]</div>
 <p>You will note that we have introduced fractions and square roots in this example as well as Greek letters. The “\left” and “\right” commands just ensure that the size of the brackets used is correct e.g. omitting them in this example would give regular brackets that do not fit around the fractions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4406a849-2149-4bc1-b170-776f0e139ad2">
-<span class="eqno">(6)<a class="headerlink" href="#equation-4406a849-2149-4bc1-b170-776f0e139ad2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1fb61100-b838-41e3-b63a-240d0d7b8c83">
+<span class="eqno">(6)<a class="headerlink" href="#equation-1fb61100-b838-41e3-b63a-240d0d7b8c83" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{( \frac{\Delta A}{A})^2 + (\frac{\Delta B}{B})^2 }.
 \end{equation}\]</div>
 <div class="admonition-latex-equations-reference-materials admonition">
@@ -569,33 +568,81 @@ document.write(`
 <hr class="docutils" />
 <div class="section" id="activities">
 <h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
-<p>In this session you are going to draft the results, discussion and conclusion sections of a lab report. You will then have the opportunity to try and format it using Overleaf, which is an online LaTeX editor.</p>
+<p>In this session you are going to draft the results, discussion and conclusion sections of a lab report for the conservation of momentum experiment you performed earlier in the semester. You will then have the opportunity to try and format it using Overleaf, which is an online LaTeX editor.</p>
 <hr class="docutils" />
 <div class="section" id="produce-a-high-quality-plot">
 <h3>1. Produce a High Quality Plot<a class="headerlink" href="#produce-a-high-quality-plot" title="Permalink to this heading">#</a></h3>
-<p>For one of the experiments that you have performed in the lab, produce a plot that contains the features of a high quality plot of your results for you to then discuss in</p>
+<p>For one of the experiments that you have performed in the lab, produce a plot that contains the features of a high quality plot of your results for you to talk about later.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="write-the-results-section">
-<h3>2. Write the Results Section<a class="headerlink" href="#write-the-results-section" title="Permalink to this heading">#</a></h3>
-<p>In this section, you should tell the reader what topic your work is in, why it is important, what other people have done in the field and what you plan to do. It’s also a good idea to briefly tell your reader what to expect from the rest of the report. You may wish to use the lab report template for this section below to help you write this section.</p>
+<div class="section" id="write-the-analysis-and-results-section">
+<h3>2. Write the Analysis and Results Section<a class="headerlink" href="#write-the-analysis-and-results-section" title="Permalink to this heading">#</a></h3>
+<p>Using the structure from the lab report template below, write the anaylsis and results section of a report.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Suggested Results Structure</p>
+<p><strong>Paragraph 1</strong> should introduce and discuss the measured data:</p>
 <ul class="simple">
-<li><p>Summarise the structure of the rest of this paper. “In Section 2, we discuss …”.</p></li>
+<li><p>State what was measured and how many sets of data were recorded</p></li>
+<li><p>Was the data then processed in some way? Describe any calculations clearly.</p></li>
+<li><p>Refer to the figure containing the graph with caption.</p></li>
+<li><p>Describe the trend in the measured data.</p></li>
+<li><p>Are any outliers present?</p></li>
+<li><p>State that the error bars represent the error on the mean .</p></li>
+<li><p>State range of statistical errors e.g. “ variation of 15% ..”</p></li>
+<li><p>Comment briefly on any other issues with the measured data.</p></li>
+</ul>
+<p><img alt="" src="_images/ReportFigure2.png" /></p>
+<p>Figure 1: Measurements of free-fall for a steel sphere. A least squares fit of the data is also shown. The spheres had mass of 100g and initial velocity of zero. Error bars on the y-data are calculated using the standard  error of the mean of repeat measurements. The x errorbars are too small to be seen.</p>
+<p><strong>Paragraph 2</strong>: After introducing the measured data, next describe the analysis methods. In most cases, this may be a linear correlation analysis. First describe what the goal of the analysis is and describe the method used:</p>
+<ul class="simple">
+<li><p>Was a linearisation of the data or other processing required?</p></li>
+<li><p>Was a least squares fit, a weighted (chi-squared) fit used?</p></li>
+<li><p>Were the error bars of the measured data considered in the analysis?</p></li>
+<li><p>Refer back to the figure stating that “this linear analysis is also shown in Fig. 1.”</p></li>
+</ul>
+<p><strong>Paragraph 3</strong> is where you should state the analysis results:</p>
+<ul class="simple">
+<li><p>What was the goodness of fit? (See correlation coefficient, r2, for linear fit or discuss reduced chi-sqaure.)</p></li>
+<li><p>Did the fit produce a key parameter such as the slope or intercept?</p></li>
+<li><p>State slope±error with units</p></li>
+<li><p>State intercept±error with units</p></li>
+<li><p>Ensure errors are rounded to 1 significant figure. Next ensure that both slope and intercept values are rounded to the same number of decimal places as their respective errors</p></li>
+<li><p>Use the analysis results to calculate parameters of interest. This typically involves using the slope and it’s error value. For example, if the value of the slope (m) was being used to determine the acceleration due to gravity then <span class="math notranslate nohighlight">\(g=m\)</span> and the uncertainty or error on the value of <span class="math notranslate nohighlight">\(g\)</span> is the error on the slope, <span class="math notranslate nohighlight">\(\Delta m\)</span>.  given by:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \Delta g =g\left(\frac{\Delta m}{m}\right). \]</div>
+<ul class="simple">
+<li><p>In more complex cases involving multiple sources of errors, present a full error propagation here as per your lectures.</p></li>
+<li><p>State the final result: “from this analysis a result of <span class="math notranslate nohighlight">\(g=9.77 \pm 0.07\,\)</span> m<span class="math notranslate nohighlight">\(\,\)</span>s<span class="math notranslate nohighlight">\(^2\)</span> was calculated.”.</p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="write-the-discussion">
-<h3>3. Write the Discussion<a class="headerlink" href="#write-the-discussion" title="Permalink to this heading">#</a></h3>
-<p>After the introduction section, the theoretical details of your research question will be described here. While this is typically a short section at around half a page, you should aim to introduce the key physics as a theoretical model. The end of this section should make a theoretical prediction e.g. “Freefall time as a function of distance t(s) is predicted by Equation 1 to be a power law …”. This sets up the rest of your paper to show how your experiment tested this prediction. If this is a theoretical investigation then this Theory section will be larger and will build up the necessary layers of the physical model with many references throughout.</p>
+<div class="section" id="write-the-discussion-and-conclusion">
+<h3>3. Write the Discussion and Conclusion<a class="headerlink" href="#write-the-discussion-and-conclusion" title="Permalink to this heading">#</a></h3>
+<p>Using the structure from the lab report template below, write the discussion and conclusion sections of a report.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Suggested Discussion Structure</p>
+<p><strong>Paragraph 1</strong> is where you will interpret and discuss the analysis results:</p>
+<ul class="simple">
+<li><p>What do the slope, intercept, r2 values mean?</p></li>
+<li><p>Describe their physical significance.</p></li>
+<li><p>Discuss the uncertainties/errors.</p></li>
+<li><p>Were they large &gt;10% or quite small ~1%?</p></li>
+<li><p>What was the primary source of error?</p></li>
+<li><p>Was there any sign of systematic errors such as a non-zero intercept?</p></li>
+</ul>
+<p><strong>Paragraph 2</strong>:</p>
+<ul class="simple">
+<li><p>State again the overall result e.g. <span class="math notranslate nohighlight">\( g = 9.77 \pm 0.07 \,m\,s^2\)</span>.</p></li>
+<li><p>Is the result valid? How does it compare with theory?</p></li>
+<li><p>Compare with other known or accepted data.</p></li>
+<li><p>Find references to other published work if possible.</p></li>
+<li><p>Keep your tone objective and critical with regards to your results.</p></li>
+<li><p>Describe aspects that could be improved in the future. Try to be specific here. How would you redesign the experiment? Are there any examples in the published literature you could follow? Provide references and cite them numerically [1].</p></li>
+</ul>
+<p><strong>Paragraph 3</strong>: A short paragraph stating main results and limitations.</p>
 </div>
-<hr class="docutils" />
-<div class="section" id="write-the-conclusion">
-<h3>4. Write the Conclusion<a class="headerlink" href="#write-the-conclusion" title="Permalink to this heading">#</a></h3>
-<p>This is where you tell your reader how you collected your data and give them information to allow them to repeat your experiment if they wish to do so. At the same time, it shouldn’t be a copy of your lab script, a list of instructions or a recipe. There’s no need to tell your reader about the equipment setting that didn’t work, just the ones that did.</p>
-<p>It is often good to include a useful, labelled diagram of the set up. If you are using any equipment that isn’t standard (like a ruler would be), give your reader the name and model number.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="writing-a-report-in-latex">
@@ -684,9 +731,8 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#produce-a-high-quality-plot">1. Produce a High Quality Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-results-section">2. Write the Results Section</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-discussion">3. Write the Discussion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-conclusion">4. Write the Conclusion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-analysis-and-results-section">2. Write the Analysis and Results Section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-discussion-and-conclusion">3. Write the Discussion and Conclusion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-report-in-latex">5. Writing a Report in LaTeX</a></li>
 </ul>
 </li>

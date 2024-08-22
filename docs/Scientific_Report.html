@@ -403,7 +403,7 @@ document.write(`
 <h1>The Scientific Report<a class="headerlink" href="#the-scientific-report" title="Permalink to this heading">#</a></h1>
 <div class="section" id="writing-a-lab-report">
 <h2>Writing a Lab Report<a class="headerlink" href="#writing-a-lab-report" title="Permalink to this heading">#</a></h2>
-<p>You will be writing scientific reports throughout your degree. At Level 1, you have a series of lab homeworks you need to complete, with some of them involving writing different sections of a report. At the end of each semester, you will also need to submit a full report based on one of your lab experiments.</p>
+<p>You will be writing scientific reports throughout your degree. At Level 1, you have a series of lab homeworks you need to complete and some of them involving writing different sections of a report. At the end of each semester you will also need to submit a full report based on one of your lab experiments.</p>
 <p>Learning to write a good lab report takes time and practise. In order to get better at writing reports quickly, it is imperative that you spend time reviewing the feedback you recieve in the lab. <strong>Feedback is the most valubale thing that we can provide you with</strong> - if you do not review your feedback you will be unable to identify your areas for improvement and this will greatly impact your development.</p>
 <p>The good news is that you will be given a lab report template for your level-1 reports, which you can (and should) use to structure your reports. It tells you what the main sections of a report are, and gives you tips about how to structure your reports. The original document can be found <a class="reference external" href="https://docs.google.com/document/d/1wsxFKrFh5lpN-O9Tj7YTbtNdC0EHZZ47/edit">here</a> and you may want to save a copy to edit when writing your own reports, but a breakdown of it is also provided below.</p>
 </div>
@@ -463,8 +463,8 @@ document.write(`
 </ul>
 <p>Equations can be inserted either inline if they are compact such as:  <span class="math notranslate nohighlight">\(E=mc^2\)</span>. Ensure that the variables are in italics.</p>
 <p>In most cases you would like a numbered equation, which where the equation is centred on a separate line and an equation number is positioned on the right margin, for example:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f7ab3ba-18eb-4308-ab04-ab37a2c4d571">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8f7ab3ba-18eb-4308-ab04-ab37a2c4d571" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a9b7f028-cbfb-47e4-bde1-50b93d31573c">
+<span class="eqno">(1)<a class="headerlink" href="#equation-a9b7f028-cbfb-47e4-bde1-50b93d31573c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t = \sqrt{\frac{2s}{g}}.
 \end{equation}\]</div>
 <p>The main advantage of a numbered equation is that it can be cross referenced in the text. For example, “ The free-fall time is described by Equation 1.” The equation can be cross referenced in subsequent sections, such as in the “Results and Analysis” section, without having to restate the equation.</p>
@@ -520,9 +520,13 @@ t = \sqrt{\frac{2s}{g}}.
 <li><p>State slope±error with units</p></li>
 <li><p>State intercept±error with units</p></li>
 <li><p>Ensure errors are rounded to 1 significant figure. Next ensure that both slope and intercept values are rounded to the same number of decimal places as their respective errors</p></li>
-<li><p>Use the analysis results to calculate parameters of interest. This typically involves using the slope and it’s error value. For example, if the value of the slope (m) was being used to determine the acceleration due to gravity then g=m and the uncertainty or error on the value of g is the error on the slope, Δm.  given by: Δg=gmm.                                                              (1)</p></li>
+<li><p>Use the analysis results to calculate parameters of interest. This typically involves using the slope and it’s error value. For example, if the value of the slope (m) was being used to determine the acceleration due to gravity then <span class="math notranslate nohighlight">\(g=m\)</span> and the uncertainty or error on the value of <span class="math notranslate nohighlight">\(g\)</span> is the error on the slope, <span class="math notranslate nohighlight">\(\Delta m\)</span>.  given by:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ \Delta g =g\left(\frac{\Delta m}{m}\right). \]</div>
+<ul class="simple">
 <li><p>In more complex cases involving multiple sources of errors, present a full error propagation here as per your lectures.</p></li>
-<li><p>State the final result: “from this analysis a result of g=9.77±0.07 m/s2 was calculated.”.</p></li>
+<li><p>State the final result: “from this analysis a result of <span class="math notranslate nohighlight">\(g=9.77 \pm 0.07\,\)</span> m<span class="math notranslate nohighlight">\(\,\)</span>s<span class="math notranslate nohighlight">\(^2\)</span> was calculated.”.</p></li>
 </ul>
 </div>
 <div class="section" id="discussion-and-conclusion">
@@ -572,13 +576,13 @@ www.kayelaby.npl.co.uk  (2005)</p>
 <hr class="docutils" />
 <div class="section" id="language">
 <h2>Language<a class="headerlink" href="#language" title="Permalink to this heading">#</a></h2>
-<p>It is often the case that as students are invested in the content of their lab report, that their choice of language and sentance structure may inadvertently take away from the clarity of their reporting. The way in which a report is written, for better or worse, is often the key factor that a reader will use to gauge the quality of the work. It is therefore key that we are able to write appropriately.</p>
+<p>It is often the case that as students are so invested in the content of their lab report, that their choice of language and sentance structure may inadvertently take away from the clarity of their reporting. The way in which a report is written, for better or worse, is often the key factor that a reader will use to gauge the quality of the work. It is therefore key that we are able to write appropriately.</p>
 <p>A report should be written:</p>
 <ul class="simple">
 <li><p><strong>Clearly</strong> - the report should be written in a way so that it is perfectly clear to the reader what was done and why. There should be no ambiguity in what is written. For example, when writing an account of how the data was collected and analysed, would somebody reading your report be able to repeat the experiment as you did it without having to make any assumptions about the proceedure you followed.</p></li>
-<li><p><strong>Concisely</strong> - the report should be written in a breif but comprehensive way. This is often very challenging for inexpereinced report writers, but is something that develops naturally through practise. Esentially, we want to avoid using words unnecassarily so that the reader is able to efficiently extract information without comprimising the clarity of what is written. This is often achieved by restructuring sentances after proof reading the ideas you have put onto the page. Writing concisely and using shorter sentances also makes the report more engaging to read.</p></li>
-<li><p><strong>In a passive voice</strong> - it is best practise to write a report neither in the first or second person i.e. “I measured the mass of the shotput” or “we recorded the temperature of the object”. Instead the report should be written as if you were an objective observer floating above the experiment as it was performed i.e. “the mass of the shotput was measured” or “the temperature of the object was recorded”. As a report is an account of what <strong>was</strong> done, it should be written in the <strong>past</strong> tense.</p></li>
-<li><p><strong>Formally</strong> - a lab report is a formal reference document and should be written as such. As such you should avoid using slang and using contractions (<strong>Do not</strong> use “<strong>don’t</strong>). At the same time, it is important that you do not write too formally or superfluously (arguably the use of “superflously” was a little superflous of me.).</p></li>
+<li><p><strong>Concisely</strong> - the report should be written in a breif but comprehensive way. This is often very challenging for inexperienced report writers, but is something that develops naturally through practise. Essentially, we want to avoid using words unnecessarily so that the reader is able to efficiently extract information without comprimising the clarity of what is written. This is often achieved by restructuring sentences after proof reading the ideas you have put onto the page. Writing concisely and using shorter sentences also makes the report more engaging to read.</p></li>
+<li><p><strong>In a passive voice</strong> - it is best practise to write a report neither in the first nor second person e.g. “I measured the mass of the shotput” or “we recorded the temperature of the object”. Instead the report should be written as if you were an objective observer floating above the experiment as it was performed i.e. “the mass of the shotput was measured” or “the temperature of the object was recorded”. As a report is an account of what <strong>was</strong> done, it should be written in the <strong>past</strong> tense.</p></li>
+<li><p><strong>Formally</strong> - a lab report is a formal reference document and should be written as such. You should avoid using slang and contractions (<strong>Do not</strong> use “<strong>don’t</strong>”). At the same time, it is important that you do not write too formally or superfluously (arguably the use of “superfluously” was a little superfluous of me).</p></li>
 </ul>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
@@ -594,7 +598,7 @@ www.kayelaby.npl.co.uk  (2005)</p>
 </ul>
 <div class="admonition-topic-sentences admonition">
 <p class="admonition-title">Topic Sentences</p>
-<p>These are sentances that appear in all paragraphs and usually the first sentence of a paragraph. They tell the reader what that paragraph is about and often idicate where the parahraph fits into the whole report. By reading just the topic sentences of a report, you should be able to see the flowing narrative built by the writer which to helps link ideas and improve the readability of the report.</p>
+<p>These are sentences that appear in all paragraphs and usually the first sentence of a paragraph. They tell the reader what that paragraph is about and often indicate where the paragraph fits into the whole report. By reading just the topic sentences of a report, you should be able to see the flowing narrative built by the writer which to helps link ideas and improve the readability of the report.</p>
 </div>
 </div>
 <hr class="docutils" />
@@ -613,12 +617,12 @@ www.kayelaby.npl.co.uk  (2005)</p>
 </ul>
 <p><strong>Future tense:</strong></p>
 <ul class="simple">
-<li><p>When you’re talking about future work (“Future studies will be required to understand this phenomenon”) - note here you could just as well say “future studies are required”.</p></li>
+<li><p>When you’re talking about future work (“Future studies will be required to understand this phenomenon” - note here you could just as well say “future studies are required”).</p></li>
 <li><p>When indicating possible projections or consequences (“It seems plausible to assume that temperatures will continue to rise”).</p></li>
 </ul>
 <div class="admonition-additional-resources admonition">
 <p class="admonition-title">Additional Resources</p>
-<p>You may wish to also reivew the <a class="reference external" href="https://xerte.york.ac.uk/play.php?template_id=2189#page2">York Academic Writing Style Guide</a>. T</p>
+<p>You may wish to also reivew the <a class="reference external" href="https://xerte.york.ac.uk/play.php?template_id=2189#page2">York Academic Writing Style Guide</a>.</p>
 </div>
 </div>
 </div>
