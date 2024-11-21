@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propagation of Uncertainties &#8212; PHYS11006 - Computing Skills Workshop</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Appendix_ErrorProp';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Referencing, Introduction, Theory and Methods" href="IntroMethods.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to PHY11006 Academic Writing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Scientific_Communication.html">Scientific Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scientific_Report.html">The Scientific Report</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 9</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="IntroMethods.html">Referencing, Introduction, Theory and Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Propagation of Uncertainties</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FAppendix_ErrorProp.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Appendix_ErrorProp.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Propagation of Uncertainties</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-perform-error-propagation-calculations">Quickly Perform Error Propagation Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-error-propagation">Example Error Propagation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-error-propagation-calculations">Standard Error Propagation Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainties-in-single-variable-functions">Uncertainties in single-variable functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainties-in-multivariable-functions">Uncertainties in multivariable functions</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="propagation-of-uncertainties">
+<h1>Propagation of Uncertainties<a class="headerlink" href="#propagation-of-uncertainties" title="Permalink to this heading">#</a></h1>
+<p>In most of your labs you have been able to directly extract your experimentally determined values from the gradient or intercept of the line of best fit that you have superimposed onto your data. This has meant that in most instances, you can deal with your experimental errors by calculating standard errors and then performing a suitble regression analysis.</p>
+<p>You will have also noticed that sometimes we calculate the value of one parameter from another, where the latter parameter has an associated uncertainty. Often we also need to perform calculations including multiple variables that have their own associated errors. If either of these is the case, we need to be able to perform suitable error propagations. This appendix to the writing materials has been designed to demonstrate how to perform simple error propagations and provide you with the error equations for various common calculations.</p>
+<p>For a more in depth look at how to perform error propagations, you should review chapter 4 of <a class="reference external" href="https://find.shef.ac.uk/primo-explore/fulldisplay?docid=44SFD_ALMA_DS21177067650001441&amp;context=L&amp;vid=44SFD_VU2&amp;lang=en_US&amp;search_scope=SCOP_EVERYTHING&amp;adaptor=Local%20Search%20Engine&amp;tab=everything&amp;query=any,contains,hughes%20and%20hase&amp;offset=0">“Measurements and their Uncertainties: A Practical Guide to Modern Error Analysis”</a> by Hughes and Hase.</p>
+<p>When performing analysis in the lab it is key that you are able to do these calculations. When writing your report it may also be appropriate to include the equations used for your error propagations in an appendix at the end of the report.</p>
+<hr class="docutils" />
+<div class="section" id="quickly-perform-error-propagation-calculations">
+<h2>Quickly Perform Error Propagation Calculations<a class="headerlink" href="#quickly-perform-error-propagation-calculations" title="Permalink to this heading">#</a></h2>
+<p>The following is taken from the final page of the the aforementioned textbook. It provides a very brief summary of how we can perform error propagation calculations.</p>
+<p>Consider a linear function:</p>
+<div class="math notranslate nohighlight">
+\[Z = f(A,B),\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> have associated uncertainties of <span class="math notranslate nohighlight">\(\Delta A\)</span> and <span class="math notranslate nohighlight">\(\Delta B\)</span>, respectively. It can be understood that the uncertainty in <span class="math notranslate nohighlight">\(Z\)</span> due to the uncertainty in <span class="math notranslate nohighlight">\(A\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta _Z^A = \lvert f(A+\Delta A,B) - f(A,B)\rvert,\]</div>
+<p>and the uncertainty in <span class="math notranslate nohighlight">\(Z\)</span> due to the uncertainty in <span class="math notranslate nohighlight">\(B\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta _Z^B = \lvert f(A,B+\Delta B) - f(A,B)\rvert.\]</div>
+<p>Using Pythagoras’ the total error can be calculated as:</p>
+<div class="math notranslate nohighlight">
+\[ \Delta Z^2 = (\Delta _Z^A)^2 + (\Delta _Z^B)^2, \]</div>
+<div class="math notranslate nohighlight">
+\[ \therefore \Delta Z = \sqrt{(\Delta _Z^A)^2 + (\Delta _Z^B)^2}. \]</div>
+<p>Assuming small uncertainties, the calculus based approximation to this result is:</p>
+<div class="math notranslate nohighlight">
+\[(\Delta Z)^2 = \left(\frac{\partial Z}{\partial A} \right)^2 \Delta A^2 + \left(\frac{\partial Z}{\partial B} \right)^2 \Delta B^2. \]</div>
+<p>The above equation can be used to determine the uncertainty for any function of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>. If the function was dependent on additional variables, we would just continue to add on terms to this equation for each variable. For example,  if <span class="math notranslate nohighlight">\(Z = f(A,B,C)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[(\Delta Z)^2 = \left(\frac{\partial Z}{\partial A} \right)^2 \Delta A^2 + \left(\frac{\partial Z}{\partial B} \right)^2 \Delta B^2 + \left(\frac{\partial Z}{\partial C} \right)^2 \Delta C^2. \]</div>
+<p>For a single variable function this can be simplified to:</p>
+<div class="math notranslate nohighlight">
+\[\Delta Z = \lvert \frac{\partial Z}{\partial A} \rvert \Delta A. \]</div>
+<hr class="docutils" />
+<div class="section" id="example-error-propagation">
+<h3>Example Error Propagation<a class="headerlink" href="#example-error-propagation" title="Permalink to this heading">#</a></h3>
+<p>Using the formula above, let us determine the error propagation equation for a very simple function <span class="math notranslate nohighlight">\(Z = A + B\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are variables with associated uncertainties. First we start with our general formula:</p>
+<div class="math notranslate nohighlight">
+\[\Delta Z^2 = \left(\frac{\partial Z}{\partial A} \right)^2 \Delta A^2 + \left(\frac{\partial Z}{\partial B} \right)^2 \Delta B^2. \]</div>
+<p>Next, we replace Z with the actual function:</p>
+<div class="math notranslate nohighlight">
+\[\Delta Z^2 = \left(\frac{\partial (A+B)}{\partial A} \right)^2 \Delta A^2 + \left(\frac{\partial (A+B)}{\partial B} \right)^2 \Delta B^2. \]</div>
+<p>Solving the partial differentials gives:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial(A+B)}{\partial A} = 1, \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial (A+B)}{\partial B} = 1, \]</div>
+<p>thus:</p>
+<div class="math notranslate nohighlight">
+\[\Delta Z^2 =  \Delta A^2 +  \Delta B^2, \]</div>
+<div class="math notranslate nohighlight">
+\[ \therefore \Delta Z = \sqrt{\Delta A^2 +  \Delta B^2}. \]</div>
+<p>In order to propagate the error for a simple addition (or subtraction) we must simply add the associated uncertainties in quadrature…</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="standard-error-propagation-calculations">
+<h2>Standard Error Propagation Calculations<a class="headerlink" href="#standard-error-propagation-calculations" title="Permalink to this heading">#</a></h2>
+<p>For complex functions, you may need to take the calculus approach to determine how to propagate the uncertainties, however, for standard functions it may be easier to use these pre-derived expressions.</p>
+<div class="section" id="uncertainties-in-single-variable-functions">
+<h3>Uncertainties in single-variable functions<a class="headerlink" href="#uncertainties-in-single-variable-functions" title="Permalink to this heading">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Uncertainty</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = \frac{1}{A} \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \Delta Z = \frac{\Delta A}{A^2} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = e^A\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = e^A \Delta A\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = e^A\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = e^A \Delta A\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = \ln(A)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \frac{\Delta A}{A}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = \log(A)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \frac{\Delta A}{log(10)A}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = A^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \lvert n A^{n-1}\rvert \Delta A\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = 10^A\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = 10^A ln(10) \Delta A\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = \sin(A)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \lvert \cos(A) \rvert \Delta A\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = \cos(A)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \lvert \sin(A) \rvert \Delta A\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = \tan(A)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = (1+Z^2) \Delta A\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="uncertainties-in-multivariable-functions">
+<h3>Uncertainties in multivariable functions<a class="headerlink" href="#uncertainties-in-multivariable-functions" title="Permalink to this heading">#</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Expression used to Calculate <span class="math notranslate nohighlight">\(\Delta Z\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(Z = A+B\)</span> or <span class="math notranslate nohighlight">\(Z = A-B\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \sqrt{\Delta A^2 + \Delta B^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(Z = A \times B\)</span> or <span class="math notranslate nohighlight">\(Z = \frac{A}{B}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\Delta Z}{Z} = \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2} \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(Z = A^n\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\lvert \frac{\Delta Z}{Z}\rvert = \lvert n \frac{\Delta A}{A}\rvert\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(Z = kA \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \lvert k \rvert \Delta A\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = k\frac{A}{B}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\Delta Z}{Z} = \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = k\frac{A^n}{B^m}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\Delta Z}{Z} = \sqrt{\left(n\frac{\Delta A}{A}\right)^2 + \left(m\frac{\Delta B}{B}\right)^2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = A + B - C + D \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta Z = \sqrt{\Delta A^2 + \Delta B^2 + \Delta C^2 + \Delta D^2} \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\( Z = \frac{A \times B}{C \times D} \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\Delta Z}{Z} = \sqrt{\left(\frac{\Delta A}{A}\right)^2 + \left(\frac{\Delta B}{B}\right)^2 + \left(\frac{\Delta C}{C}\right)^2 + \left(\frac{\Delta D}{D}\right)^2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\( Z = \frac{A^n \times B^m}{C^p \times D^q} \)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{\Delta Z}{Z} = \sqrt{\left(n\frac{\Delta A}{A}\right)^2 + \left(m\frac{\Delta B}{B}\right)^2 \left(p\frac{\Delta C}{C}\right)^2 + \left(q\frac{\Delta D}{D}\right)^2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="IntroMethods.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Referencing, Introduction, Theory and Methods</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-perform-error-propagation-calculations">Quickly Perform Error Propagation Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-error-propagation">Example Error Propagation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-error-propagation-calculations">Standard Error Propagation Calculations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainties-in-single-variable-functions">Uncertainties in single-variable functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainties-in-multivariable-functions">Uncertainties in multivariable functions</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Ross Mathieson
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
