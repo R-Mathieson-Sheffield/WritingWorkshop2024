@@ -65,6 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ResultsDiscussionConclusion';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Propagation of Uncertainties" href="Appendix_ErrorProp.html" />
+    <link rel="prev" title="Referencing, Introduction, Theory and Methods" href="IntroMethods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,6 +165,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 9</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="IntroMethods.html">Referencing, Introduction, Theory and Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 10</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LaTeX, Results, Discussion and Conclusion</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -431,8 +437,8 @@ document.write(`
 </div>
 </div>
 <p>This will render the equation as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eabc70df-e7ba-467e-b8de-b4ad9a84454d">
-<span class="eqno">()<a class="headerlink" href="#equation-eabc70df-e7ba-467e-b8de-b4ad9a84454d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29eb9aeb-f69b-47b2-8675-7af5d743e70f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-29eb9aeb-f69b-47b2-8675-7af5d743e70f" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^2
 \end{equation}\]</div>
 <p>To raise something to the power, we simply use “^”. This will superscript the character following it. To superscript multiple characters we simply follow “^” with curly brackets, for example:</p>
@@ -446,8 +452,8 @@ document.write(`
 </div>
 </div>
 <p>will return:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0223d3c7-662d-4957-868b-89d29078dafd">
-<span class="eqno">()<a class="headerlink" href="#equation-0223d3c7-662d-4957-868b-89d29078dafd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-deb9ab18-b690-4f1b-89ed-3f7de7cfede0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-deb9ab18-b690-4f1b-89ed-3f7de7cfede0" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^{2x + c}.
 \end{equation}\]</div>
 <p>Similarly, if we would like to subscript something, we just use the underscore “_”. If we want to introduce a greek letter, we simply type it out following a backslash. If we capitalise the name of the letter, it will return the capitalised symbol - be careful with this as capitalised and lowercase greek letters are often used to represent different things in Physics. Take a look at the following equation in Latex format and see if you can decipher what it will render as:</p>
@@ -461,13 +467,13 @@ document.write(`
 </div>
 </div>
 <p>This renders as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b247d2d-0779-4b6f-a5db-0dbae1dffa5b">
-<span class="eqno">()<a class="headerlink" href="#equation-2b247d2d-0779-4b6f-a5db-0dbae1dffa5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8fc571fd-33e5-448d-ab73-2e22916c5d60">
+<span class="eqno">(5)<a class="headerlink" href="#equation-8fc571fd-33e5-448d-ab73-2e22916c5d60" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{ \left( \frac{\Delta A}{A} \right)^2 + \left( \frac{\Delta B}{B} \right)^2 }.
 \end{equation}\]</div>
 <p>You will note that we have introduced fractions and square roots in this example as well as Greek letters. The “\left” and “\right” commands just ensure that the size of the brackets used is correct e.g. omitting them in this example would give regular brackets that do not fit around the fractions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-faa3cff4-9a7c-4de5-922f-48df0227faab">
-<span class="eqno">()<a class="headerlink" href="#equation-faa3cff4-9a7c-4de5-922f-48df0227faab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9a290afe-2326-4ac5-b7db-f0461c47a9ee">
+<span class="eqno">(6)<a class="headerlink" href="#equation-9a290afe-2326-4ac5-b7db-f0461c47a9ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{( \frac{\Delta A}{A})^2 + (\frac{\Delta B}{B})^2 }.
 \end{equation}\]</div>
 <div class="admonition-latex-equations-reference-materials admonition">
@@ -562,11 +568,11 @@ document.write(`
 <hr class="docutils" />
 <div class="section" id="activities">
 <h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
-<p>In this session you are going to draft the results, discussion and conclusion sections of a lab report for the conservation of momentum experiment you performed earlier in the semester. You will then have the opportunity to try and format it using Overleaf, which is an online LaTeX editor.</p>
+<p>In this session you are going to draft the results, discussion and conclusion sections of a lab report for one of the experiments that you performed earlier in the semester. This can either be the “An investigation into acceleration” experiment or the “Moment of inertia and rotational motion” experiment as you have already written this section of a lab report for the “conservation of momentum” lab for your homework. You should however review the feedback provided on your homework to see where improvements can be made this time round. You will then have the opportunity to try and format it using Overleaf, which is an online LaTeX editor.</p>
 <hr class="docutils" />
 <div class="section" id="produce-a-high-quality-plot">
 <h3>1. Produce a High Quality Plot<a class="headerlink" href="#produce-a-high-quality-plot" title="Permalink to this heading">#</a></h3>
-<p>For one of the experiments that you have performed in the lab, produce a plot that contains the features of a high quality plot of your results for you to talk about later.</p>
+<p>For your chosen experiment, produce a plot that contains the features of a high quality plot of your results for you to talk about later.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="write-the-analysis-and-results-section">
@@ -679,6 +685,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="IntroMethods.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Referencing, Introduction, Theory and Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Appendix_ErrorProp.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Propagation of Uncertainties</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
