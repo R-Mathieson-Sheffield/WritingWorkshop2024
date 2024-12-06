@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ResultsDiscussionConclusion';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Propagation of Uncertainties" href="Appendix_ErrorProp.html" />
+    <link rel="next" title="Computational Tools for Writing" href="ComputationalWriting.html" />
     <link rel="prev" title="Referencing, Introduction, Theory and Methods" href="IntroMethods.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,6 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 10</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">LaTeX, Results, Discussion and Conclusion</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Semester 1, Week 11</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ComputationalWriting.html">Computational Tools for Writing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
 <ul class="nav bd-sidenav">
@@ -437,8 +441,8 @@ document.write(`
 </div>
 </div>
 <p>This will render the equation as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29eb9aeb-f69b-47b2-8675-7af5d743e70f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-29eb9aeb-f69b-47b2-8675-7af5d743e70f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0382e60-d68e-4c7e-84cc-e5de026a8abb">
+<span class="eqno">(3)<a class="headerlink" href="#equation-f0382e60-d68e-4c7e-84cc-e5de026a8abb" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^2
 \end{equation}\]</div>
 <p>To raise something to the power, we simply use “^”. This will superscript the character following it. To superscript multiple characters we simply follow “^” with curly brackets, for example:</p>
@@ -452,8 +456,8 @@ document.write(`
 </div>
 </div>
 <p>will return:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-deb9ab18-b690-4f1b-89ed-3f7de7cfede0">
-<span class="eqno">(4)<a class="headerlink" href="#equation-deb9ab18-b690-4f1b-89ed-3f7de7cfede0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-93a4bd7b-269a-4e19-80b9-18605ac8af62">
+<span class="eqno">(4)<a class="headerlink" href="#equation-93a4bd7b-269a-4e19-80b9-18605ac8af62" title="Permalink to this equation">#</a></span>\[\begin{equation}
     E = mc^{2x + c}.
 \end{equation}\]</div>
 <p>Similarly, if we would like to subscript something, we just use the underscore “_”. If we want to introduce a greek letter, we simply type it out following a backslash. If we capitalise the name of the letter, it will return the capitalised symbol - be careful with this as capitalised and lowercase greek letters are often used to represent different things in Physics. Take a look at the following equation in Latex format and see if you can decipher what it will render as:</p>
@@ -467,13 +471,13 @@ document.write(`
 </div>
 </div>
 <p>This renders as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fc571fd-33e5-448d-ab73-2e22916c5d60">
-<span class="eqno">(5)<a class="headerlink" href="#equation-8fc571fd-33e5-448d-ab73-2e22916c5d60" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-45b7bf7b-d3c1-4ee3-9ab8-1a41f82dc163">
+<span class="eqno">(5)<a class="headerlink" href="#equation-45b7bf7b-d3c1-4ee3-9ab8-1a41f82dc163" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{ \left( \frac{\Delta A}{A} \right)^2 + \left( \frac{\Delta B}{B} \right)^2 }.
 \end{equation}\]</div>
 <p>You will note that we have introduced fractions and square roots in this example as well as Greek letters. The “\left” and “\right” commands just ensure that the size of the brackets used is correct e.g. omitting them in this example would give regular brackets that do not fit around the fractions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a290afe-2326-4ac5-b7db-f0461c47a9ee">
-<span class="eqno">(6)<a class="headerlink" href="#equation-9a290afe-2326-4ac5-b7db-f0461c47a9ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e1c94f0a-0f29-4049-a341-56ee8d34ac25">
+<span class="eqno">(6)<a class="headerlink" href="#equation-e1c94f0a-0f29-4049-a341-56ee8d34ac25" title="Permalink to this equation">#</a></span>\[\begin{equation}
     \Delta Z = z \sqrt{( \frac{\Delta A}{A})^2 + (\frac{\Delta B}{B})^2 }.
 \end{equation}\]</div>
 <div class="admonition-latex-equations-reference-materials admonition">
@@ -695,11 +699,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Appendix_ErrorProp.html"
+       href="ComputationalWriting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Propagation of Uncertainties</p>
+        <p class="prev-next-title">Computational Tools for Writing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
